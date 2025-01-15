@@ -1,0 +1,50 @@
+{
+  "header": {
+    "title": "Sector Hungaricus",
+    "language": "Language",
+    "english": "English",
+    "hungarian": "Magyar"
+  },
+  "pages": {
+    "merch": {
+      "title": "Merch",
+      "categories": {
+        "cat1": "cat1",
+        "cat2": "cat2"
+      }
+    },
+    "calendar": {
+      "title": "Calendar"
+    },
+    "landing_page": {
+      "categories": {
+        "40k": {
+          "killteam": {
+            "title": "Warhammer 40K - Kill Team",
+            "description": "Action-packed tactical skirmish combat in the war-torn 41st Millennium"
+          }
+        },
+        "aos": {
+          "spearhead": {
+            "title": "Warhammer Age of Sigmar - Spearhead",
+            "description": "Play fast, fun games of Warhammer Age of Sigmar using the Spearhead game type – with just one box of miniatures per player!"
+          },
+          "warcry": {
+            "title": "Warhammer Age of Sigmar - Warcry",
+            "description": "Fast-paced Skirmish Battles in the Mortal Realms"
+          }
+        },
+        "other": {
+          "trench_crusade": {
+            "title": "Trench Crusade",
+            "description": "Trench Crusade is a skirmish-scale tabletop miniatures game that will plunge players deep into a horrifying alternate timeline."
+          }
+        },
+        "pc_games": {
+          "title": "PC Games",
+          "description": "Join our community and play together with us"
+        }
+      }
+    }
+  }
+}
