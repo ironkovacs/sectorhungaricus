@@ -1,62 +1,58 @@
 import React from "react";
-import { Card, CardContent, Typography, Box } from "@mui/material";
+import { Card, CardContent, Typography, CardMedia, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 interface CategoryCardProps {
     title: string;
     description: string;
-    image?: string;
+    image: string;
+    navigationLink: string; // Prop for navigation
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ title, description, image }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({ title, description, image, navigationLink }) => {
+    const navigate = useNavigate(); // Use the react-router-dom navigation function
+
+    const handleNavigation = () => {
+        navigate(navigationLink); // Navigate to the navigationLink path
+    };
+
     return (
         <Card
-            style={{
-                width: "100%",
-                maxWidth: 450, // Card width for desktop
-                minWidth: 250, // Minimum card width
-                flexGrow: 1,
+            onClick={handleNavigation}
+            style={{ cursor: "pointer" }}
+            sx={{
+                maxWidth: 345,
+                transition: "transform 0.2s ease-in-out",
+                "&:hover": {
+                    transform: "scale(1.05)", // Optional hover effect
+                },
             }}
         >
-            <Box
-                style={{
-                    height: 175, // Adjust card image/header height
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    color: "white",
-                    backgroundColor: image ? "transparent" : "#333",
-                    position: "relative",
-                    textTransform: "uppercase",
-                    overflow: "hidden",
-                    borderTopLeftRadius: "4px",
-                    borderTopRightRadius: "4px",
-                }}
-            >
-                {image ? (
-                    <img
-                        src={image}
-                        alt={title}
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            position: "absolute",
-                        }}
-                    />
-                ) : (
-                    <Typography variant="h6" style={{ zIndex: 1, padding: "0 10px", textAlign: "center" }}>
-                        {title}
-                    </Typography>
-                )}
-            </Box>
+            <CardMedia
+                component="img"
+                height="200"
+                image={image}
+                alt={title}
+                style={{ objectFit: "cover" }}
+            />
             <CardContent>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" component="div" gutterBottom>
                     {title}
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="text.secondary">
                     {description}
                 </Typography>
             </CardContent>
+            <Button
+                color="primary"
+                onClick={(e) => {
+                    e.stopPropagation(); // Prevent triggering the entire Card's onClick.
+                    handleNavigation();
+                }}
+                sx={{ margin: "10px" }}
+            >
+                Learn More
+            </Button>
         </Card>
     );
 };

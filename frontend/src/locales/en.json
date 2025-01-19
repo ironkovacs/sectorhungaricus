@@ -17,6 +17,8 @@
       "title": "Calendar"
     },
     "landing_page": {
+    "welcome1": "Welcome to the Sector Hungaricus website!",
+    "welcome2": "Our community is Hungary’s largest self-organized, store- and club-independent wargame skirmish group. You can find more information about the games we play below. By browsing our event calendar, you can discover beginner-friendly events, club days, and tournament dates. Join our Discord servers to chat with the community about games and hobby-related topics!",
       "categories": {
         "40k": {
           "killteam": {
@@ -43,6 +45,49 @@
         "pc_games": {
           "title": "PC Games",
           "description": "Join our community and play together with us"
+        }
+      }
+    },
+    "categories": {
+      "killteam": {
+        "banner": {
+          "title": "Kill Team"
+        },
+        "menu": {
+          "intro": "What is Kill Team",
+          "official_resources": "Official Resources",
+          "map_packs": "Map Packs",
+          "unofficial_resources": "Unofficial Resources",
+          "events": "Events and Local News"
+        },
+        "intro": {
+          "title": "What is Kill Team?",
+          "description": "Kill Team is a fast-paced, skirmish-based tabletop game set in the Warhammer 40,000 universe. Small squads of specialist fighters engage in tactical battles with evolving missions and dynamic rules. Perfect for newcomers to wargaming or veterans looking for quick matchups."
+        },
+        "official_resources": {
+          "title": "Official Resources",
+          "description": "Explore the official resources for Kill Team:",
+          "links": {
+            "website": "Kill Team Official Website",
+            "news": "Kill Team News Page",
+            "downloads": "Official Downloads (Rules, Errata)"
+          }
+        },
+        "map_packs": {
+          "title": "Map Packs",
+          "description": "Learn about official and community-made map packs for Kill Team games!"
+        },
+        "unofficial_resources": {
+          "title": "Unofficial Resources",
+          "links": {
+            "kt3": "Kill Team 3 Stat Tracker",
+            "printables": "3D Printable Minis Link Collection",
+            "battlekit": "Kill Team Battlekit"
+          }
+        },
+        "events": {
+          "title": "Events and Local News",
+          "description": "Stay updated on upcoming tournaments, local events, and news about the Kill Team community!"
         }
       }
     }

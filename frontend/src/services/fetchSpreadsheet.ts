@@ -21,9 +21,9 @@ export const fetchSpreadsheet = async () => {
 
         // Map headers to row values and return as array of objects
         const headers = rows[0]; // First row contains headers
-        const data = rows.slice(1).map((row) => {
+        const data = rows.slice(1).map((row: { [x: string]: string; }) => {
             const entry: any = {};
-            headers.forEach((header, index) => {
+            headers.forEach((header: string | number, index: string | number) => {
                 entry[header] = row[index] || ""; // Handle missing columns
             });
             return entry;

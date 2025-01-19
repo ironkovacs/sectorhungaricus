@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Select, MenuItem, Box, Button, IconButton } from "@mui/material";
+import {AppBar, Toolbar, Typography, Select, MenuItem, Box, Button, IconButton, SelectChangeEvent} from "@mui/material";
 import { Link } from "react-router-dom";
 import TranslateIcon from "@mui/icons-material/Translate";
 import { useTranslation } from "react-i18next";
@@ -12,7 +12,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ language, setLanguage }) => {
     const { t } = useTranslation();
 
-    const handleLanguageChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    const handleLanguageChange = (event: SelectChangeEvent<string>) => {
         const newLanguage = event.target.value as string;
         setLanguage(newLanguage);
     };

@@ -17,6 +17,8 @@
       "title": "Naptár"
     },
     "landing_page": {
+      "welcome1": "Üdvözlünk a Sector Hungaricus honlapján!",
+      "welcome2": "Közösségünk Magyarország legnagyobb, önszerveződő és bolt- vagy klubfüggetlen wargame skirmish társasága. Az általunk játszott játékokról bővebb információkat lentebb találhatsz. Eseménynaptárunkban pedig böngészhetsz a kezdőknek szóló események, klubnapok és versenynapok között. Csatlakozz Discord szervereinkhez, ahol a játékokról és a hobbival kapcsolatos témákról beszélgethetsz a közösség tagjaival!",
       "categories": {
         "40k": {
           "killteam": {
@@ -36,13 +38,56 @@
         },
         "other": {
           "trench_crusade": {
-            "title": "Árok Keresztes Háború",
-            "description": "Az Árok Keresztes Háború egy sakk-fázisú asztali miniatűr játék, amely mélyen elmeríti a játékosokat egy hátborzongató alternatív idősíkban."
+            "title": "Trench Crusade",
+            "description": "A Trench Crusade egy sakk-fázisú asztali miniatűr játék, amely mélyen elmeríti a játékosokat egy hátborzongató alternatív idősíkban."
           }
         },
         "pc_games": {
           "title": "PC Játékok",
           "description": "Csatlakozz a közösségünkhöz, és játssz velünk együtt"
+        }
+      }
+    },
+    "categories": {
+      "killteam": {
+        "banner": {
+          "title": "Kill Team"
+        },
+        "menu": {
+          "intro": "What is Kill Team",
+          "official_resources": "Official Resources",
+          "map_packs": "Map Packs",
+          "unofficial_resources": "Unofficial Resources",
+          "events": "Events and Local News"
+        },
+        "intro": {
+          "title": "What is Kill Team?",
+          "description": "Kill Team is a fast-paced, skirmish-based tabletop game set in the Warhammer 40,000 universe. Small squads of specialist fighters engage in tactical battles with evolving missions and dynamic rules. Perfect for newcomers to wargaming or veterans looking for quick matchups."
+        },
+        "official_resources": {
+          "title": "Official Resources",
+          "description": "Explore the official resources for Kill Team:",
+          "links": {
+            "website": "Kill Team Official Website",
+            "news": "Kill Team News Page",
+            "downloads": "Official Downloads (Rules, Errata)"
+          }
+        },
+        "map_packs": {
+          "title": "Map Packs",
+          "description": "Learn about official and community-made map packs for Kill Team games!"
+        },
+        "unofficial_resources": {
+          "title": "Unofficial Resources",
+          "links": {
+            "kt3": "Kill Team 3 Stat Tracker",
+            "printables": "3D Printable Minis Link Collection",
+            "battlekit": "Kill Team Battlekit"
+          }
+        },
+        "events": {
+          "title": "Events and Local News",
+          "description": "Stay updated on upcoming tournaments, local events, and news about the Kill Team community!"
         }
       }
     }

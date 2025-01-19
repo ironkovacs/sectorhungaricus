@@ -14,6 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage }) => {
             <Header language={language} setLanguage={setLanguage} />
             <div style={{ flex: 1, padding: "20px" }}>{children}</div>
             <Footer />
+
         </div>
     );
 };

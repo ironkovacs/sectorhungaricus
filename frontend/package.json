@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "copyPhpConfig": "node ./scripts/copy-php-config.js",
+    "build": "tsc -b && vite build && npm run copyPhpConfig",
     "dev": "vite",
-    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -15,7 +16,6 @@
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
     "@tanstack/react-query": "^5.64.1",
-    "@tanstack/react-query-devtools": "^5.64.1",
     "@types/js-cookie": "^3.0.6",
     "axios": "^1.7.9",
     "date-fns": "^4.1.0",
@@ -26,12 +26,12 @@
     "react-big-calendar": "^1.17.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.4.0",
-    "react-query": "^3.39.3",
     "react-router": "^7.1.1",
     "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@tanstack/react-query-devtools": "^5.64.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
