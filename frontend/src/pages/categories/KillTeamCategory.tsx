@@ -5,19 +5,20 @@ import {
     ListItemText,
     ListItemIcon,
     Collapse,
-    Container,
-    Typography,
-    Box,
-    Drawer,
     IconButton,
+    Drawer,
     Toolbar,
     AppBar,
+    Box,
+    Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu"; // Hamburger menu icon
-import OpenInNewIcon from "@mui/icons-material/OpenInNew"; // Captive Portal icon
+import OpenInNewIcon from "@mui/icons-material/OpenInNew"; // External link icon
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
+
+import CategoryLayout from "../../components/layouts/CategoryLayout";
 import MapPacksComponent from "../../components/killteam/MapPacksComponent";
 import PrintablesComponent from "../../components/killteam/PrintablesComponent";
 import LocalEventsComponent from "../../components/killteam/LocalEventsComponent";
@@ -52,7 +53,7 @@ const KillTeamCategory: React.FC = () => {
                         <Typography variant="h5" gutterBottom>
                             {t("pages.categories.killteam.intro.title")}
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1">
                             {t("pages.categories.killteam.intro.description")}
                         </Typography>
                     </>
@@ -70,17 +71,17 @@ const KillTeamCategory: React.FC = () => {
         }
     };
 
-    const menuContent = (
+    const renderMenuContent = () => (
         <List>
-            <ListItem button onClick={() => setActiveSection(Sections.INTRO)}>
+            <ListItem  onClick={() => setActiveSection(Sections.INTRO)}>
                 <ListItemText primary={t("pages.categories.killteam.menu.intro")} />
             </ListItem>
 
-            <ListItem button onClick={() => setActiveSection(Sections.MAP_PACKS)}>
+            <ListItem  onClick={() => setActiveSection(Sections.MAP_PACKS)}>
                 <ListItemText primary={t("pages.categories.killteam.menu.map_packs")} />
             </ListItem>
 
-            <ListItem button onClick={toggleOfficialResources}>
+            <ListItem  onClick={toggleOfficialResources}>
                 <ListItemText primary={t("pages.categories.killteam.menu.official_resources")} />
                 {officialResourcesOpen ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
@@ -122,7 +123,7 @@ const KillTeamCategory: React.FC = () => {
                 </List>
             </Collapse>
 
-            <ListItem button onClick={toggleUnofficialResources}>
+            <ListItem  onClick={toggleUnofficialResources}>
                 <ListItemText primary={t("pages.categories.killteam.menu.unofficial_resources")} />
                 {unofficialResourcesOpen ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
@@ -134,27 +135,31 @@ const KillTeamCategory: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <ListItemText primary={t("pages.categories.killteam.unofficial_resources.links.battlekit")} />
+                        <ListItemText
+                            primary={t("pages.categories.killteam.unofficial_resources.links.battlekit")}
+                        />
                         <ListItemIcon>
                             <OpenInNewIcon fontSize="small" />
                         </ListItemIcon>
                     </ListItem>
-                    <ListItem button onClick={() => setActiveSection(Sections.PRINTABLES)}>
-                        <ListItemText primary={t("pages.categories.killteam.unofficial_resources.links.printables")} />
+                    <ListItem  onClick={() => setActiveSection(Sections.PRINTABLES)}>
+                        <ListItemText
+                            primary={t("pages.categories.killteam.unofficial_resources.links.printables")}
+                        />
                     </ListItem>
                 </List>
             </Collapse>
 
-            <ListItem button onClick={toggleNews}>
+            <ListItem  onClick={toggleNews}>
                 <ListItemText primary={t("pages.categories.killteam.menu.events")} />
                 {newsOpen ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={newsOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <ListItem button onClick={() => setActiveSection(Sections.LOCAL_EVENTS)}>
+                    <ListItem  onClick={() => setActiveSection(Sections.LOCAL_EVENTS)}>
                         <ListItemText primary={t("pages.categories.killteam.menu.local_events")} />
                     </ListItem>
-                    <ListItem button onClick={() => setActiveSection(Sections.LOCAL_NEWS)}>
+                    <ListItem  onClick={() => setActiveSection(Sections.LOCAL_NEWS)}>
                         <ListItemText primary={t("pages.categories.killteam.menu.news")} />
                     </ListItem>
                 </List>
@@ -163,60 +168,27 @@ const KillTeamCategory: React.FC = () => {
     );
 
     return (
-        <Container maxWidth="lg" style={{ marginTop: "20px" }}>
-            <Box
-                sx={{
-                    width: "100%",
-                    height: "200px",
-                    backgroundImage: "url('https://via.placeholder.com/1200x200.png?text=Kill+Team+Banner')",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    borderRadius: "5px",
-                    marginBottom: "20px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}
-            >
-                <Typography variant="h3" style={{ color: "white", textShadow: "2px 2px 5px black" }}>
-                    {t("pages.categories.killteam.banner.title")}
-                </Typography>
-            </Box>
-
-            {/* Mobile Hamburger Menu */}
-            <AppBar position="static" color="default" sx={{ display: { sm: "none" }, marginBottom: 2 }}>
-                <Toolbar>
-                    <IconButton edge="start" color="inherit" onClick={handleDrawerToggle}>
-                        <MenuIcon />
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
-            <Drawer anchor="left" open={mobileOpen} onClose={handleDrawerToggle} sx={{ display: { sm: "none" } }}>
-                <Box sx={{ width: 250 }}>{menuContent}</Box>
-            </Drawer>
-
-            {/* Main Layout */}
-            <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}>
-                <Box
-                    sx={{
-                        width: { xs: "100%", sm: "250px" },
-                        display: { xs: "none", sm: "block" },
-                        flexShrink: 0,
-                    }}
-                >
-                    {menuContent}
-                </Box>
-
-                <Box
-                    sx={{
-                        flexGrow: 1,
-                        padding: "0 16px",
-                    }}
-                >
-                    {renderMainContent()}
-                </Box>
-            </Box>
-        </Container>
+        <CategoryLayout
+            bannerTitle={t("pages.categories.killteam.banner.title")}
+            menuContent={
+                <>
+                    {renderMenuContent()}
+                    {/* Mobile Drawer */}
+                    <AppBar position="static" color="default" sx={{ display: { sm: "none" }, marginBottom: 2 }}>
+                        <Toolbar>
+                            <IconButton edge="start" color="inherit" onClick={handleDrawerToggle}>
+                                <MenuIcon />
+                            </IconButton>
+                        </Toolbar>
+                    </AppBar>
+                    <Drawer anchor="left" open={mobileOpen} onClose={handleDrawerToggle} sx={{ display: { sm: "none" } }}>
+                        <Box sx={{ width: 250 }}>{renderMenuContent()}</Box>
+                    </Drawer>
+                </>
+            }
+        >
+            {renderMainContent()}
+        </CategoryLayout>
     );
 };
 

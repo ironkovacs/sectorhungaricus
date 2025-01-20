@@ -1,6 +1,15 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
+/* Reset default browser styles for html and body */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: 0;
+  height: 100%; /* Ensures the body and html take the full viewport height */
+  overflow-x: hidden; /* Prevent horizontal overflow issues */
+
 }
 
+/* Ensure global box-sizing reset for consistency */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

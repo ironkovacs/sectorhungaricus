@@ -2,11 +2,11 @@ import React from "react";
 import { Card, CardContent, Typography, CardMedia, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-interface CategoryCardProps {
+export interface CategoryCardProps {
     title: string;
     description: string;
     image: string;
-    navigationLink: string; // Prop for navigation
+    navigationLink: string;
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ title, description, image, navigationLink }) => {

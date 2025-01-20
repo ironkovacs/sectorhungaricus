@@ -3,8 +3,15 @@ import warCryImage from './../assets/img/warcry.jpg'
 import trenchCrusadeImage from "./../assets/img/trench.png";
 import spearheadImage from "./../assets/img/aos.jpg"
 import underConstructionImage from "./../assets/img/c6876eb1-d2eb-44b1-80c8-6b7c314183c5.webp"
+import logo from "./../assets/logo.png"
+import kofiQR from "./../assets/qrcode.png"
+import kofiLogo from "./../assets/kofi_symbol.png"
 
 const assets = {
+    kofi:{
+        kofiLogo, kofiQR
+    },
+    logo,
     images: {
         killTeam: killTeamImage,
         warcry: warCryImage,

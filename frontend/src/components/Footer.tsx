@@ -1,40 +1,41 @@
 import React from "react";
-import { Box, Typography, IconButton } from "@mui/material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import DiscordIcon from "@mui/icons-material/Forum"; // Placeholder for Discord icon
+import { Box, Link, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import DiscordInviteButton from "./DiscordInviteButton.tsx";
+import KofiWidget from "./KofiWidget.tsx";
+
 
 const Footer: React.FC = () => {
+    const { t } = useTranslation();
+
     return (
         <Box
-            component="footer"
             sx={{
-                bgcolor: "primary.main",
-                color: "white",
-                py: 3,
-                mt: 5,
-                textAlign: "center",
+                display: "flex",
+                justifyContent: "space-between", // Ensure even spacing between sections
+                alignItems: "center",
+                backgroundColor: "#f5f5f5",
+                padding: "16px 24px",
+                borderTop: "1px solid #ccc",
             }}
         >
-            <Typography variant="body1" gutterBottom>
-                Connect with us:
-            </Typography>
+            {/* Left Section: Ko-fi and Discord Buttons */}
+            <Box display="flex" alignItems="center" gap={2}>
+                <KofiWidget />
+                <DiscordInviteButton />
+            </Box>
+
+            {/* Right Section: Disclaimer Link */}
             <Box>
-                <IconButton
-                    aria-label="facebook"
-                    href="https://facebook.com"
-                    target="_blank"
-                    color="inherit"
+                <Link
+                    href="/impress-disclaimer"
+                    underline="hover"
+                    color="primary"
                 >
-                    <FacebookIcon />
-                </IconButton>
-                <IconButton
-                    aria-label="discord"
-                    href="https://discord.com"
-                    target="_blank"
-                    color="inherit"
-                >
-                    <DiscordIcon />
-                </IconButton>
+                    <Typography variant="body1">
+                        {t("header.title")} – Impress & Disclaimer
+                    </Typography>
+                </Link>
             </Box>
         </Box>
     );

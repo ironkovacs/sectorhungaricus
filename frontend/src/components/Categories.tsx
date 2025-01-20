@@ -3,10 +3,12 @@ import assets from "../services/assetsLoader";
 import { Container, Grid} from "@mui/material";
 import React from "react";
 import {useTranslation} from "react-i18next";
+
+
 const Categories: React.FC = () => {
     const { t } = useTranslation();
 
-    const categories: CategoryCardProps = [
+    const categories: CategoryCardProps[] = [
         {
             title: t("pages.landing_page.categories.40k.killteam.title"),
             description: t("pages.landing_page.categories.40k.killteam.description"),
@@ -31,12 +33,12 @@ const Categories: React.FC = () => {
             image: assets.images.trenchCrusade,
             navigationLink: "//trench-crusade", // Path for Trench Crusade
         },*/
-        {
+     /*   {
             title: t("pages.landing_page.categories.pc_games.title"),
             description: t("pages.landing_page.categories.pc_games.description"),
             image: "",
             navigationLink: "/pc-games", // Path for PC Games
-        },
+        },*/
     ];
 
     return (
