@@ -1,40 +1,57 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { LanguageProvider } from "./contexts/LanguageContext"; // Import LanguageProvider
+
 import PageLayout from "./components/layouts/PageLayout";
 
-// Your pages
-import LandingPage from "./pages/LandingPage";
-import MerchPage from "./pages/MerchPage";
-import CalendarPage from "./pages/CalendarPage";
-import KillTeamCategory from "./pages/categories/KillTeamCategory";
-import SpearheadCategory from "./pages/categories/SpearheadCategory";
-import WarcryCategory from "./pages/categories/WarcryCategory";
-import ImpressDisclaimer from "./pages/ImpressDisclaimerPage";
+import routesConfig from "./routesConfig";
+import LandingPage from "./pages/LandingPage.tsx";
+import MerchPage from "./pages/MerchPage.tsx";
+import CalendarPage from "./pages/CalendarPage.tsx";
 
 const queryClient = new QueryClient();
+
+
+
+
 
 const App: React.FC = () => {
     return (
         <QueryClientProvider client={queryClient}>
-            <LanguageProvider>
-                <Router>
-                    <PageLayout>
-                        <Routes>
-                            <Route path="/" element={<LandingPage />} />
-                            <Route path="/merch" element={<MerchPage />} />
-                            <Route path="/calendar" element={<CalendarPage />} />
-                            <Route path="/killteam" element={<KillTeamCategory />} />
-                            <Route path="/spearhead" element={<SpearheadCategory />} />
-                            <Route path="/warcry" element={<WarcryCategory />} />
-                            <Route path="/impress-disclaimer" element={<ImpressDisclaimer />} />
-                        </Routes>
-                    </PageLayout>
-                </Router>
-            </LanguageProvider>
-            <ReactQueryDevtools initialIsOpen={false} />
+            <BrowserRouter>
+                <PageLayout>
+                    <Routes>
+                        <Route path="/" element={<LandingPage />} />
+                        <Route path="/merch" element={<MerchPage />} />
+                        <Route path="/calendar" element={<CalendarPage />} />
+                        {routesConfig.map((category) => (
+                            <Route
+                                key={category.path}
+                                path={category.path}
+                            >
+                                {/* Render a default component for the category, if provided */}
+                                {category.component && (
+                                    <Route index element={<category.component />} />
+                                )}
+
+                                {/* Render each subroute */}
+                                {category.subRoutes?.map((sub) => (
+                                    <Route
+                                        key={sub.path}
+                                        path={sub.path}
+                                        element={sub.component ? <sub.component /> : null}
+                                    />
+                                ))}
+                            </Route>
+                        ))}
+
+                        {/* Add a route for the default/fallback page (e.g., Home) */}
+                        <Route path="/" element={<div>Welcome Page</div>} />
+                    </Routes>
+                </PageLayout>
+            </BrowserRouter>
+            <ReactQueryDevtools/>
         </QueryClientProvider>
     );
 };

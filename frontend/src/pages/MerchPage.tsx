@@ -1,34 +1,38 @@
 
 import React from "react";
-import {useSpreadsheet} from "../hooks/useSpreadsheet.ts";
+import ShopItems from "../components/ShopItems.tsx";
 
-import {Typography} from "@mui/material";
-
-interface Product {
-    id: string;
-    category: string;
-    nameEn: string;
-    nameHu: string;
-    descriptionEn: string;
-    descriptionHu: string;
-    detailedDescriptionEn: string;
-    detailedDescriptionHu: string;
-    price: string;
-    image: string;
+export interface ShopItem {
+    Alias: string;
+    Name: string;
+    Price: number;
+    ThumbnailUrls: string[];
+    IsSoldOut: boolean;
+    Description: string;
+    IsPayWhatYouWant: boolean;
+    RequiresShipping: boolean;
+    ExclusiveToSubscribers: boolean;
+    IsMemberOnly: boolean;
+    ExemptFromSalesTax: boolean;
+    PercentageDiscount: number;
+    ShopCategoryIds: number[];
+    LimitItemsEnabled: boolean;
+    ItemsAvailable: number | null;
+    OrderCount: number;
+    ScheduledToPublishAt: string | null;
+    IsScheduled: boolean;
+    ScheduledDateUI: string;
+    ScheduledTimeUI: string;
 }
 
+
+
+
 const MerchPage: React.FC = () => {
-    const { data, isLoading, error } = useSpreadsheet();
 
-    if (isLoading) return <p>Loading merch...</p>;
-    if (error) return <p>Failed to load merch: {error instanceof Error ? error.message : "Unknown error"}</p>;
 
-    const products = data as Product[];
-    console.log(products);
     return (
-<Typography>
-    Merch
-</Typography>
+        <ShopItems></ShopItems>
     );
 };
 

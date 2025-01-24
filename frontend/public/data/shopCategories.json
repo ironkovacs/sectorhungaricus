@@ -1,0 +1,25 @@
+{
+  "atLeastOneMemberOnlyShopItem": false,
+  "categories": [
+    {
+      "Id": 569066,
+      "Name": "digital",
+      "NormalizedName": "digital"
+    },
+    {
+      "Id": 569067,
+      "Name": "physical",
+      "NormalizedName": "physical"
+    },
+    {
+      "Id": 569065,
+      "Name": "Wargame Accessories",
+      "NormalizedName": "wargameaccessories"
+    },
+    {
+      "Id": 569068,
+      "Name": "wearables",
+      "NormalizedName": "wearables"
+    }
+  ]
+}

@@ -1,27 +1,58 @@
-import React from "react";
-import { List, ListItem, ListItemText } from "@mui/material";
+import React, { useState } from "react";
 import CategoryLayout from "../../components/layouts/CategoryLayout";
+import SideMenu, { MenuConfigItem } from "../../components/SideMenu";
 
+enum Sections {
+    INTRO = "INTRO",
+    RESOURCES = "RESOURCES",
+    NEWS = "NEWS",
+}
+
+const menuConfig: Record<string, MenuConfigItem> = {
+    intro: {
+        type: "internal",
+        target: Sections.INTRO,
+        translationKey: "pages.categories.warcry.menu.intro",
+    },
+    resources: {
+        type: "internal",
+        target: Sections.RESOURCES,
+        translationKey: "pages.categories.warcry.menu.resources",
+    },
+    news: {
+        type: "internal",
+        target: Sections.NEWS,
+        translationKey: "pages.categories.warcry.menu.news",
+    },
+};
 
 const WarcryCategory: React.FC = () => {
-    // Menu content (sidebar) items
-    const menuContent = (
-        <List>
-            <ListItem component="button">
-                <ListItemText primary="Overview" />
-            </ListItem>
-            <ListItem>
-                <ListItemText primary="Scenarios" />
-            </ListItem>
-            <ListItem>
-                <ListItemText primary="Factions" />
-            </ListItem>
-        </List>
-    );
+    const [activeSection, setActiveSection] = useState<Sections>(Sections.INTRO);
+
+    const renderMainContent = () => {
+        switch (activeSection) {
+            case Sections.INTRO:
+                return <div>Warcry Intro Content</div>;
+            case Sections.RESOURCES:
+                return <div>Warcry Resources Content</div>;
+            case Sections.NEWS:
+                return <div>Warcry News Content</div>;
+            default:
+                return null;
+        }
+    };
 
     return (
-        <CategoryLayout bannerTitle="Warcry" menuContent={menuContent}>
-            <p>This is a placeholder page for Warcry content.</p>
+        <CategoryLayout
+            bannerTitle="Warcry"
+            menuContent={
+                <SideMenu
+                    menuConfig={menuConfig}
+                    setActiveSection={(section: string) => setActiveSection(section as Sections)}
+                />
+            }
+        >
+            {renderMainContent()}
         </CategoryLayout>
     );
 };

@@ -67,11 +67,11 @@
         "official_resources": {
           "title": "Official Resources",
           "description": "Explore the official resources for Kill Team:",
-          "links": {
+
             "website": "Kill Team Official Website",
             "news": "Kill Team News Page",
             "downloads": "Official Downloads (Rules, Errata)"
-          }
+
         },
         "map_packs": {
           "title": "Map Packs",
@@ -79,11 +79,9 @@
         },
         "unofficial_resources": {
           "title": "Unofficial Resources",
-          "links": {
-            "kt3": "Kill Team 3 Stat Tracker",
             "printables": "3D Printable Minis Link Collection",
             "battlekit": "Kill Team Battlekit"
-          }
+
         },
         "events": {
           "title": "Events and Local News",

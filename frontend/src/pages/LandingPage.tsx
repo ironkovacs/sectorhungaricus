@@ -5,7 +5,7 @@ import Categories from "../components/Categories.tsx";
 import {Box, Typography} from "@mui/material";
 import {useTranslation} from "react-i18next";
 
-const LandingPage: React.FC = () => {
+const LandingPage: React.FC = (): React.JSX.Element => {
     const { t } = useTranslation();
 
     return (

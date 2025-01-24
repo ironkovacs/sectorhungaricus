@@ -1,62 +1,78 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     AppBar,
     Toolbar,
-    Select,
     MenuItem,
     Box,
     Button,
     IconButton,
-    SelectChangeEvent,
     Tab,
     Tabs,
+    Menu,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import TranslateIcon from "@mui/icons-material/Translate";
 import { useTranslation } from "react-i18next";
-import { useLanguage } from "../contexts/LanguageContext"; // Import your custom hook
+import { useLanguage } from "../contexts/LanguageContext";
 import { Logo, Title } from "./styled/HeaderStyled";
 
 import assets from "../services/assetsLoader";
+import routesConfig from "../routesConfig"; // Import routesConfig to dynamically render tabs
 
 const Header: React.FC = () => {
     const { t } = useTranslation();
-    const { language, setLanguage } = useLanguage(); // Access language and setLanguage from the LanguageContext
+    const { setLanguage } = useLanguage(); // Access language and setLanguage from LanguageContext
     const location = useLocation();
 
-    // Track the active tab based on the current route
-    const [activeTab, setActiveTab] = useState<string>(
-        ["/killteam", "/spearhead", "/warcry"].includes(location.pathname) ? location.pathname : "/"
-    );
+    // Automatically set the active tab based on the current path
+    const [activeTab, setActiveTab] = useState<string>("");
+
+    useEffect(() => {
+        // Determine the active tab by matching the location.pathname with the base category paths
+        const basePath = `/${location.pathname.split("/")[1]}`;
+        const isValidPath = routesConfig.some((route) => route.path === basePath);
+        if (isValidPath) {
+            setActiveTab(basePath);
+        } else {
+            setActiveTab("/"); // Default to the root (home page)
+        }
+    }, [location.pathname]);
 
     // Handle language selection
-    const handleLanguageChange = (event: SelectChangeEvent<string>) => {
-        setLanguage(event.target.value as string); // Update the language through the context
+    const handleLanguageChange = (lang: string) => {
+        setLanguage(lang); // Update the language through the context
+        setAnchorEl(null); // Close the language menu
     };
 
-    // Handle tab change
+    // Handle tab change (when user switches manually between tabs)
     const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
-        setActiveTab(newValue); // Update the active tab
+        setActiveTab(newValue);
     };
+
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null); // Track anchor for language menu
 
     return (
         <AppBar position="static">
             <Toolbar sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
                 {/* Logo and Title */}
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                    {/* Logo */}
-                    <Logo src={assets.logo} alt="Logo" />
-                    {/* Title */}
-                    <Title>
-                        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-                            {t("header.title")}
-                        </Link>
-                    </Title>
+                <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+                    <Link
+                        to="/"
+                        style={{
+                            textDecoration: "none",
+                            color: "inherit",
+                            display: "flex",
+                            flexDirection: "row",
+                            alignItems: "center",
+                        }}
+                    >
+                        <Logo src={assets.logo} alt="Logo" />
+                        <Title>{t("header.title")}</Title>
+                    </Link>
                 </Box>
 
-                {/* Menu and Language Selector */}
+                {/* Merchandise and Calendar Buttons */}
                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                    {/* Menu Buttons */}
                     <Box sx={{ display: { xs: "none", sm: "flex" }, marginRight: 2 }}>
                         <Button color="inherit" href="/merch">
                             {t("pages.merch.title")}
@@ -68,35 +84,54 @@ const Header: React.FC = () => {
 
                     {/* Language Selector */}
                     <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <IconButton edge="start" color="inherit" aria-label="translate" sx={{ marginRight: 1 }}>
+                        <IconButton
+                            edge="start"
+                            color="inherit"
+                            aria-label="translate"
+                            sx={{ marginRight: 1 }}
+                            onClick={(event) => setAnchorEl(event.currentTarget)} // Open the language menu
+                        >
                             <TranslateIcon />
                         </IconButton>
-                        <Select
-                            value={language}
-                            onChange={handleLanguageChange}
-                            variant="outlined"
-                            style={{ backgroundColor: "white", color: "black", borderRadius: 4 }}
+
+                        <Menu
+                            anchorEl={anchorEl}
+                            open={Boolean(anchorEl)} // Menu is open when anchorEl is set
+                            onClose={() => setAnchorEl(null)} // Close the menu by clearing anchorEl
+                            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+                            transformOrigin={{ vertical: "top", horizontal: "left" }}
                         >
-                            <MenuItem value="en">{t("header.english")}</MenuItem>
-                            <MenuItem value="hu">{t("header.hungarian")}</MenuItem>
-                        </Select>
+                            {/* Dynamic Language Options */}
+                            <MenuItem onClick={() => handleLanguageChange("en")}>
+                                {t("header.english")}
+                            </MenuItem>
+                            <MenuItem onClick={() => handleLanguageChange("hu")}>
+                                {t("header.hungarian")}
+                            </MenuItem>
+                        </Menu>
                     </Box>
                 </Box>
             </Toolbar>
 
-            {/* Navigation Tabs */}
+            {/* Navigation Tabs: Dynamically Rendered Based on routesConfig */}
             <Box sx={{ flexGrow: 1, marginLeft: 2 }}>
                 <Tabs
-                    value={activeTab}
+                    value={activeTab} // Active tab is determined by the base path
                     onChange={handleTabChange}
-                    variant="scrollable" // Makes tabs scrollable if they don't fit
-                    scrollButtons="auto" // Automatically shows scroll buttons for overflow
+                    variant="scrollable"
+                    scrollButtons="auto"
                     textColor="inherit"
                     indicatorColor="secondary"
                 >
-                    <Tab label="Kill Team" value="/killteam" component={Link} to="/killteam" />
-                    <Tab label="Spearhead" value="/spearhead" component={Link} to="/spearhead" />
-                    <Tab label="Warcry" value="/warcry" component={Link} to="/warcry" />
+                    {routesConfig.map((category) => (
+                        <Tab
+                            key={category.path}
+                            label={category.name} // Dynamically render category name
+                            value={category.path} // Base path (e.g., "/killteam")
+                            component={Link}
+                            to={`${category.path}/intro`} // Default subpage route (e.g., "/killteam/intro")
+                        />
+                    ))}
                 </Tabs>
             </Box>
         </AppBar>
