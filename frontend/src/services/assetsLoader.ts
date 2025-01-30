@@ -6,6 +6,8 @@ import underConstructionImage from "./../assets/img/c6876eb1-d2eb-44b1-80c8-6b7c
 import logo from "./../assets/logo.png"
 import kofiQR from "./../assets/qrcode.png"
 import kofiLogo from "./../assets/kofi_symbol.png"
+import BoucherieBlock from "../assets/fonts/Boucherie Block.otf"
+import BoucherieBlockBold from "../assets/fonts/Boucherie Block Bold.otf"
 
 const assets = {
     kofi:{
@@ -19,6 +21,10 @@ const assets = {
         spearhead: spearheadImage,
         underConstruction: underConstructionImage
     },
+    font:{
+        BoucherieBlock,
+        BoucherieBlockBold
+    }
 };
 
 export default assets;

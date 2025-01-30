@@ -3,6 +3,7 @@ import SpearheadCategory from "./pages/categories/SpearheadCategory.tsx";
 import WarcryCategory from "./pages/categories/WarcryCategory.tsx";
 
 import React from "react";
+import MapPacksComponent from "./components/killteam/MapPacksComponent.tsx";
 
 interface RouteConfig {
     name: string;
@@ -21,10 +22,10 @@ const routesConfig: RouteConfig[] = [
         name: "Kill Team",
         path: "/killteam",
         bannerTitle: "Kill Team",
-        component: () => <div>Kill Team Base Page</div>, // Optional base page for the main category
+        component: KillTeamCategory,
     subRoutes: [
     { name: "Intro", path: "intro", component: KillTeamCategory },
-   // { name: "Map Packs", path: "maps", component: KillTeamMaps },
+    { name: "Map Packs", path: "maps", component: MapPacksComponent },
     // { name: "Resources", path: "resources", component: KillTeamResources },
     // { name: "News", path: "news", component: KillTeamNews },
 ],
@@ -33,7 +34,7 @@ const routesConfig: RouteConfig[] = [
     name: "Spearhead",
         path: "/spearhead",
     bannerTitle: "Spearhead",
-    component: () => <div>Spearhead Base Page</div>, // Optional base page
+    component:SpearheadCategory,
     subRoutes: [
         { name: "Intro", path: "intro", component: SpearheadCategory },
         // { name: "Resources", path: "resources", component: SpearheadResources },

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import CategoryLayout from "../../components/layouts/CategoryLayout";
 import SideMenu, {MenuConfigItem} from "../../components/SideMenu.tsx";
+import MapPacksComponent from "../../components/killteam/MapPacksComponent.tsx";
+import LocalNewsComponent from "../../components/killteam/LocalNewsComponent.tsx";
+import LocalEventsComponent from "../../components/killteam/LocalEventsComponent.tsx";
 
 enum Sections {
     INTRO = "INTRO",
@@ -45,18 +48,17 @@ const menuConfig: Record<string, MenuConfigItem> = {
     },
 };
 const KillTeamCategory: React.FC = () => {
-    const [activeSection, setActiveSection] = useState<Sections>(Sections.INTRO);
-
+    const [activeSection, setActiveSection] = useState<Sections>(Sections.INTRO); // Default to Intro
     const renderMainContent = () => {
         switch (activeSection) {
             case Sections.INTRO:
                 return <div>Intro Content</div>;
             case Sections.MAP_PACKS:
-                return <div>Map Packs Content</div>;
+                return MapPacksComponent;
             case Sections.LOCAL_EVENTS:
-                return <div>Local Events Content</div>;
+                return LocalEventsComponent;
             case Sections.LOCAL_NEWS:
-                return <div>Local News Content</div>;
+                return LocalNewsComponent;
             default:
                 return null;
         }

@@ -19,10 +19,11 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const { i18n } = useTranslation();
     const [language, setLanguage] = useState(Cookies.get("lang") || "hu");
 
-    // Update `i18next` language and persist it in cookies
     useEffect(() => {
         i18n.changeLanguage(language).then(() => {
             Cookies.set("lang", language, { expires: 365 });
+        }).catch((err) => {
+            console.error("Failed to change language:", err);
         });
     }, [language, i18n]);
 

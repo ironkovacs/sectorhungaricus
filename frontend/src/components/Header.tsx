@@ -20,36 +20,33 @@ import assets from "../services/assetsLoader";
 import routesConfig from "../routesConfig"; // Import routesConfig to dynamically render tabs
 
 const Header: React.FC = () => {
-    const { t } = useTranslation();
-    const { setLanguage } = useLanguage(); // Access language and setLanguage from LanguageContext
-    const location = useLocation();
+        const { t } = useTranslation();
+        const { setLanguage } = useLanguage();
+        const location = useLocation();
 
-    // Automatically set the active tab based on the current path
-    const [activeTab, setActiveTab] = useState<string>("");
+        const [activeTab, setActiveTab] = useState<string>("");
 
     useEffect(() => {
-        // Determine the active tab by matching the location.pathname with the base category paths
         const basePath = `/${location.pathname.split("/")[1]}`;
         const isValidPath = routesConfig.some((route) => route.path === basePath);
         if (isValidPath) {
-            setActiveTab(basePath);
+            setActiveTab(basePath); // Match the Tab with the base path
         } else {
-            setActiveTab("/"); // Default to the root (home page)
+            setActiveTab(""); // No matching tab
         }
     }, [location.pathname]);
 
-    // Handle language selection
     const handleLanguageChange = (lang: string) => {
-        setLanguage(lang); // Update the language through the context
+        console.log(`Changing language to: ${lang}`); // Debugging
+        setLanguage(lang); // Update context
         setAnchorEl(null); // Close the language menu
     };
 
-    // Handle tab change (when user switches manually between tabs)
     const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
         setActiveTab(newValue);
     };
 
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null); // Track anchor for language menu
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
     return (
         <AppBar position="static">
@@ -71,7 +68,7 @@ const Header: React.FC = () => {
                     </Link>
                 </Box>
 
-                {/* Merchandise and Calendar Buttons */}
+                {/* Language Selector */}
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Box sx={{ display: { xs: "none", sm: "flex" }, marginRight: 2 }}>
                         <Button color="inherit" href="/merch">
@@ -81,42 +78,32 @@ const Header: React.FC = () => {
                             {t("pages.calendar.title")}
                         </Button>
                     </Box>
-
-                    {/* Language Selector */}
-                    <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            aria-label="translate"
-                            sx={{ marginRight: 1 }}
-                            onClick={(event) => setAnchorEl(event.currentTarget)} // Open the language menu
-                        >
-                            <TranslateIcon />
-                        </IconButton>
-
-                        <Menu
-                            anchorEl={anchorEl}
-                            open={Boolean(anchorEl)} // Menu is open when anchorEl is set
-                            onClose={() => setAnchorEl(null)} // Close the menu by clearing anchorEl
-                            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-                            transformOrigin={{ vertical: "top", horizontal: "left" }}
-                        >
-                            {/* Dynamic Language Options */}
-                            <MenuItem onClick={() => handleLanguageChange("en")}>
-                                {t("header.english")}
-                            </MenuItem>
-                            <MenuItem onClick={() => handleLanguageChange("hu")}>
-                                {t("header.hungarian")}
-                            </MenuItem>
-                        </Menu>
-                    </Box>
+                    <IconButton
+                        edge="start"
+                        color="inherit"
+                        aria-label="translate"
+                        sx={{ marginRight: 1 }}
+                        onClick={(event) => setAnchorEl(event.currentTarget)}
+                    >
+                        <TranslateIcon />
+                    </IconButton>
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={() => setAnchorEl(null)}
+                        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+                        transformOrigin={{ vertical: "top", horizontal: "left" }}
+                    >
+                        <MenuItem onClick={() => handleLanguageChange("en")}>{t("header.english")}</MenuItem>
+                        <MenuItem onClick={() => handleLanguageChange("hu")}>{t("header.hungarian")}</MenuItem>
+                    </Menu>
                 </Box>
             </Toolbar>
 
-            {/* Navigation Tabs: Dynamically Rendered Based on routesConfig */}
+            {/* Navigation Tabs */}
             <Box sx={{ flexGrow: 1, marginLeft: 2 }}>
                 <Tabs
-                    value={activeTab} // Active tab is determined by the base path
+                    value={activeTab} // Track active base path
                     onChange={handleTabChange}
                     variant="scrollable"
                     scrollButtons="auto"
@@ -126,10 +113,10 @@ const Header: React.FC = () => {
                     {routesConfig.map((category) => (
                         <Tab
                             key={category.path}
-                            label={category.name} // Dynamically render category name
-                            value={category.path} // Base path (e.g., "/killteam")
+                            label={category.name}
+                            value={category.path}
                             component={Link}
-                            to={`${category.path}/intro`} // Default subpage route (e.g., "/killteam/intro")
+                            to={category.path} // Link directly to the category path (e.g., "/killteam")
                         />
                     ))}
                 </Tabs>

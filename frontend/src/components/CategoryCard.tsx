@@ -43,16 +43,6 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ title, description, image, 
                     {description}
                 </Typography>
             </CardContent>
-            <Button
-                color="primary"
-                onClick={(e) => {
-                    e.stopPropagation(); // Prevent triggering the entire Card's onClick.
-                    handleNavigation();
-                }}
-                sx={{ margin: "10px" }}
-            >
-                Learn More
-            </Button>
         </Card>
     );
 };

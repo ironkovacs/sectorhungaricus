@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-export const connection = new Sequelize(
+export const sequelize = new Sequelize(
     's10_sectorhungaricus',
     'u10_jICroN1T00',
     'O.Bze7uAM2nyq7tkmykjK=je', {
@@ -12,7 +12,7 @@ export const connection = new Sequelize(
 
 export const testConnection = async () => {
     try {
-        await connection.authenticate();
+        await sequelize.authenticate();
         console.log('Connection to the database established successfully.');
     } catch (error) {
         console.error('Unable to connect to the database:', error);

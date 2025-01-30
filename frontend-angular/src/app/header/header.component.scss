@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  align-items: start;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd; /* Optional divider */
+
+  .logo-container {
+    display: flex;
+    align-items: start;
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      .logo {
+        height: 74px;
+      }
+      .title {
+        font-family: 'Boucherie Block Bold', sans-serif;
+      }
+
+    }
+  }
+}

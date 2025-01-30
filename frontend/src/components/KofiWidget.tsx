@@ -70,25 +70,26 @@ const KofiWidget: React.FC = () => {
                         maxWidth: 400,
                         height: '100%',
                         backgroundColor: "#fff",
-                        border: "1px solid #ccc",
-                        borderRadius: "10px",
-                        boxShadow: 24,
                         p: 2, // Padding inside the popover
                     }}
                 >
                     {/* Ko-fi iframe */}
                     <iframe
-                        id="kofiframe"
-                        src="https://ko-fi.com/sectorhungaricus/?hidefeed=true&widget=true&embed=true&preview=true"
+                        id='kofiframe'
+                        src='https://ko-fi.com/sectorhungaricus/?hidefeed=true&widget=true&embed=true&preview=true'
                         style={{
-                            border: "none",
-                            width: "100%",
-                            background: "#f9f9f9",
-                        }}
-                        height="570"
-                        title="Support Sector Hungaricus"
-                    ></iframe>
+                            border: 'none',
+                            width: '100%',
+                            padding: '4px',
+                            background: '#fff',
+                            borderRadius: 0,
 
+                    }}
+                        height='570'
+
+                        title='sectorhungaricus'>
+
+                    </iframe>
                     {/* QR Code Section */}
                     <Box textAlign="center" mt={2}>
                         <Typography variant="body2" color="textSecondary" gutterBottom>
@@ -97,7 +98,7 @@ const KofiWidget: React.FC = () => {
                         <img
                             src={assets.kofi.kofiQR}
                             alt="Ko-fi QR Code"
-                            style={{ maxWidth: "100px", width: "100%" }}
+                            style={{maxWidth: "100px", width: "100%"}}
                         />
                     </Box>
                 </Box>

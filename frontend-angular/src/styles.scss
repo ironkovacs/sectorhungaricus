@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+// Import Angular Material core and the theme
+@use '@angular/material' as mat;
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@font-face {
+  font-family: "Boucherie Block";
+  src: url("assets/fonts/Boucherie Block.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Boucherie Block Bold";
+  src: url("assets/fonts/Boucherie Block Bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: bold;
+}
