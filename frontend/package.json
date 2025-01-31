@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "http://localhost:26117",
   "scripts": {
     "copyPhpConfig": "node ./scripts/copy-php-config.js",
     "build": "tsc -b && vite build && npm run copyPhpConfig",

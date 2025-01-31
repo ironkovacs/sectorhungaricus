@@ -18,7 +18,6 @@ const queryClient = new QueryClient();
 const App: React.FC = () => {
     return (
         <QueryClientProvider client={queryClient}>
-            <ThemeProvider theme={theme}>
                 <CssBaseline />
             <BrowserRouter>
                 <LanguageProvider>
@@ -44,7 +43,6 @@ const App: React.FC = () => {
                 </LanguageProvider>
             </BrowserRouter>
             <ReactQueryDevtools/>
-            </ThemeProvider>
         </QueryClientProvider>
     );
 };
