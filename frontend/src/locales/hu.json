@@ -2,17 +2,13 @@
   "header": {
     "title": "Sector Hungaricus",
     "language": "Nyelv",
-    "english": "Angol",
+    "english": "English",
     "hungarian": "Magyar"
   },
   "pages": {
     "merch": {
-      "title": "Ajándéktárgyak",
-      "categories": {
-        "cat1": "kategória1",
-        "cat2": "kategória2"
-      }
-    },
+      "title": "Ajándéktárgyak"
+      },
     "calendar": {
       "title": "Naptár"
     },
@@ -22,29 +18,19 @@
       "categories": {
         "40k": {
           "killteam": {
-            "title": "Warhammer 40K - Kill Team",
+            "title": "Kill Team",
             "description": "Akciódús taktikai harc a háború sújtotta 41. évezredben"
           }
         },
         "aos": {
           "spearhead": {
-            "title": "Warhammer Age of Sigmar - Spearhead",
+            "title": "Spearhead",
             "description": "Gyors és szórakoztató Warhammer Age of Sigmar játék a Spearhead játékmóddal – mindössze egy doboz miniatűrrel játékosonként!"
           },
           "warcry": {
-            "title": "Warhammer Age of Sigmar - Warcry",
-            "description": "Gyors ütemű csaták a Halhatatlan Birodalmakban"
+            "title": "Warcry",
+            "description": "Gyors ütemű csaták a Halandó Birodalmakban"
           }
-        },
-        "other": {
-          "trench_crusade": {
-            "title": "Trench Crusade",
-            "description": "A Trench Crusade egy sakk-fázisú asztali miniatűr játék, amely mélyen elmeríti a játékosokat egy hátborzongató alternatív idősíkban."
-          }
-        },
-        "pc_games": {
-          "title": "PC Játékok",
-          "description": "Csatlakozz a közösségünkhöz, és játssz velünk együtt"
         }
       }
     },
@@ -55,35 +41,31 @@
         },
         "menu": {
           "intro": "Mi a Kill Team?",
-          "official_resources": "Hivatalos források",
+          "rules": "Alap szbáalyok (kivonat)",
+          "game_sequence": "Játékmenet",
           "map_packs": "Map Packs",
-          "unofficial_resources": "Unofficial Resources",
+          "resources": "Források",
           "events": "Events and Local News"
         },
         "intro": {
-          "title": "What is Kill Team?",
-          "description": "Kill Team is a fast-paced, skirmish-based tabletop game set in the Warhammer 40,000 universe. Small squads of specialist fighters engage in tactical battles with evolving missions and dynamic rules. Perfect for newcomers to wargaming or veterans looking for quick matchups."
+          "title": "Mi is az a Kill Team?",
+          "description": "A **Warhammer Kill Team** egy **skirmish wargame**, ami kis létszámú, specializált csapatok irányítását teszi lehetővé. A játék a **Warhammer 40,000** univerzumában játszódik, és a nagyobb léptékű csaták helyett az egyéni egységek taktikai irányítására összpontosít. A játék **váltott aktivációt** használ, ami azt jelenti, hogy a játékosok felváltva végrehajtanak akciókat, így folyamatosan reagálva az ellenfél mozdulataira.\n\n\n---\n\n## A játékról általánosan\n\n### **Komplexitás**\n- A Kill Team egy **összetett, komplex stratégiai játék**, amely taktikai tervezést, pozicionálást és kockadobásokat igényel.\n- A játék mechanikái mélyrehatóak, de könnyen elsajátíthatóak, ha ismered a Warhammer 40,000 alapjait.\n\n### **Játékidő**\n- Egy átlagos játék **1-2 óra** között tart, attól függően, hogy mennyire ismered a szabályokat és a csapatodat.\n\n### **A csapatod**\n- A csapatod **6-14 figuraból** áll, amelyeket **fix frakció listákból** választhatsz ki.\n- A Kill Teamben szinte minden **Warhammer 40,000 frakció** elérhető, kivéve néhány kivételt (pl. **Custodes**, **Tyranid Hive Fleet**, **Grey Knights**, **Deathwatch**, **Káosz Démonok**).\n- A csapatod általában a következőkből áll:\n  - **1 vezető (Leader)**: A legértékesebb és legerősebb figura a csapatodban.\n  - **Specialisták**: Egyedi képességekkel rendelkező modellek, amelyek taktikai előnyt biztosítanak.\n  - **Harcosok**: Általános egységek, amelyekkel kitöltheted a csapatod maradék helyeit.\n- A **6 fős csapatok** jellemzően elit egységekből állnak (pl. **Space Marines**, **Káosz Légiók**), míg a **10-14 fős csapatok** hordaszerű közkatonákból (pl. **Orkok**, **Imperial Guards**).\n\n---\n\n## A játék célja\n\nA játék célja, hogy **4 forduló alatt** több **győzelmi pontot (VP)** gyűjts, mint az ellenfeled. A pontokat három fő forrásból szerezheted:\n\n1. **Crit Op (Elsődleges cél)**:\n   - A **Crit Op** pontokat a **célpontok (objective markers)** elfoglalásával, aktiválásával és megőrzésével szerezheted.\n   - Mindkét játékos ugyanazokból a célpontokból szerezhet pontokat, így stratégiai pozicionálás és időzítés kulcsfontosságú.\n\n2. **Kill Op (Ellenséges egységek megsemmisítése)**:\n   - Az ellenséges operatívek megsemmisítésével szerzel pontokat.\n   - Ez a pontszerzési mód agresszív játékstílust ösztönöz, de nem mindig a leghatékonyabb stratégia.\n\n3. **Tac Op (Taktikai célok)**:\n   - A **Tac Op** pontokat a csapatod **archetípusától** függő, titokban választott célok teljesítésével szerezheted.\n   - Az archetípusok például: **Infiltration**, **Recon**, **Security**, **Seek & Destroy**.\n   - Ezek a célok általában taktikai kihívások, mint például ellenséges terület behatolása, információgyűjtés vagy speciális pozíciók elfoglalása.\n---\n\n## Amire szükséged van a játékhoz\n\n### **Alapvető eszközök**\n- **1 csapat** modell (6-14 figura).\n- **6 oldalú kocka** készlet.\n- **Jelölők** (pl. sérülés, állapotok jelölésére).\n- **Mérőeszközök** (col/hüvelyk osztással).\n- **Nem kötelező, de hasznos**:\n  - Lézerpointer.\n  - Jegyzetfüzet vagy digitális megoldás a játékállás rögzítéséhez.\n  - Szabálykönyv, csapat adatkártyái, küldetés és felszerelés kártyák.\n\n### **Játéktér**\n- **Tábla**: **22x30 colos** (kb. 56x76 cm) játéktér.\n- **Tereptárgyak**: A Kill Team sokkal több terepet használ, mint a nagyobb léptékű társai. Javasolt:\n  - **2-4 nagyobb épület** vagy rom.\n  - **2-4 kisebb terepelem** (pl. romos fal, csövek, konténerek).\n  - **Apróbb tereptárgyak** (pl. barikádok, hordók, ládák).\n"
         },
-        "official_resources": {
-          "title": "Official Resources",
-          "description": "Explore the official resources for Kill Team:",
-          "links": {
-            "website": "Kill Team Official Website",
-            "news": "Kill Team News Page",
-            "downloads": "Official Downloads (Rules, Errata)"
-          }
+        "rules":{
+          "title": "szbályok",
+          "description": "szabáylok leírása"
         },
+        "game_sequence":{
+          "title": "Játékmenet",
+          "description": "### **1. Csata előkészítése**\n   - Minden játékos kiválaszt egy **Kill Team**-et.\n   - Meghatározzák a **killzone**-t (játéktér) és elhelyezik a tereptárgyakat.\n   - Elhelyezik a **célpontokat** (objective markers), amelyek általában a játéktér padlóján helyezkednek el.\n   - **Roll-off**: A játékosok dobókockával eldöntik, ki kezd.\n\n### **2. Operatívek kiválasztása**\n   - Minden játékos titokban kiválasztja az operatíveit, betartva a csapat szabályait.\n   - Titokban kiválasztanak **felszerelési opciókat** (maximum 4), majd egyszerre felfedik a választásukat.\n   - Minden játékos **2 Command Point (CP)**-t kap.\n   - Titokban kiválasztanak egy **taktikai opciót (Tac Op)** a csapatuk archetípusaiból (pl. **Infiltration**, **Recon**, **Security**, **Seek & Destroy**).\n\n### **3. Operatívek elhelyezése**\n   - A játékosok felváltva helyezik el a felszereléseket és az operatíveiket.\n   - Az operatíveket a **Drop Zone**-on belül kell elhelyezni, és **Conceal** (rejtett) rendeléssel kell ellátni.\n\n### **4. Felderítés (Scouting)**\n\nA **Scouting** fázisban a játékosok titokban választanak egy **scouting opciót**, amely nemcsak előnyöket biztosít, hanem a **kő-papír-olló** mechanika alapján meghatározza, ki lesz a kezdő játékos az első fordulóban.\n\n#### **Scouting opciók**\n1. **Equip (Felszerelés)**:\n   - További **felszerelési opció** kiválasztása (nem lehet olyan, amit már választottál).\n   - **Erősség**: Legyőzi a **Ploy**-t.\n\n2. **Ploy (Taktikai trükk)**:\n   - Az első **Stratégia fázisban** egy **Stratégiai Ploy** használata **0 CP**-ért.\n   - **Erősség**: Legyőzi a **Reposition**-t.\n\n3. **Reposition (Áthelyezés)**:\n   - Egy **operatív** ingyenes **Reposition** akciója a **Drop Zone**-on belül (3 col/hüvelyk távolságon belül kell maradnia).\n   - **Erősség**: Legyőzi az **Equip**-et.\n\n#### **Kő-papír-olló mechanika**\n- A **Scouting** opciók egy **kő-papír-olló** rendszerben verik egymást:\n  - **Equip** legyőzi a **Ploy**-t.\n  - **Ploy** legyőzi a **Reposition**-t.\n  - **Reposition** legyőzi az **Equip**-et.\n- **Döntetlen esetén**: Az a játékos nyer, aki **nem** kezdett a csata előkészítési fázisában.\n\n### **5. Csata lejátszása**\n   - A játék **4 fordulóból (Turning Point)** áll.\n   - Minden fordulóban a játékosok felváltva végrehajtanak akciókat.\n   - A játékosok titokban kiválasztják a **primér opciójukat** (Crit Op, Kill Op vagy Tac Op), amely további győzelmi pontokat (VP) ér a csata végén.\n\n### **6. Csata befejezése**\n   - A csata a 4. forduló után véget ér.\n   - A játékosok felfedik a primér opciójukat, és a szerzett VP-k alapján kihirdetik a győztest. Döntetlen esetén a csata döntetlen."
+        },
+        "resources": {
+          "title": "Források",
+          "description": "\n## Hivatalos források\n\n### Hírek és információk\n\n-   **Warhammer Community - Kill Team**:  \n    [https://www.warhammer-community.com/en-gb/setting/kill-team/](https://www.warhammer-community.com/en-gb/setting/kill-team/)  \n    A legfrissebb hírek, bejelentések és információk a **Kill Team** világáról.\n    \n\n### Letöltések és szabályváltoztatások\n\n-   **Warhammer Community - Downloads (Kill Team)**:  \n    [https://www.warhammer-community.com/en-gb/downloads/kill-team/](https://www.warhammer-community.com/en-gb/downloads/kill-team/)  \n    Hivatalos letöltések, szabályfrissítések és FAQ-ok a **Kill Team** játékhoz.\n    \n\n### Hivatalos mobilalkalmazás\n\n-   **iOS**:  \n    [Kill Team: The App](https://apps.apple.com/us/app/kill-team-the-app/id6479447973)  \n    Az **iOS** platformra készült hivatalos **Kill Team** alkalmazás.\n    \n-   **Android**:  \n    [Kill Team: The App](https://play.google.com/store/apps/details?id=com.gamesworkshop.kt3&gl=UK)  \n    Az **Android** platformra készült hivatalos **Kill Team** alkalmazás.\n    \n\n----------\n\n## Nem hivatalos források\n\n### KT3 Battlekit\n\n-   **KT3 Battlekit**:  \n    A **Kill Team** közösség egyik kiemelkedő tagja, **Alberto Cortes Villena** által készített webalkalmazás, amely tartalmazza a szabályokat, csapatleírásokat és egy pontozó alkalmazást.  \n    [KT3 Battlekit](https://kt3.albecortes.com/)  \n    Ez az eszköz kiválóan használható a játékok tervezéséhez, a szabályok gyors megtekintéséhez és a pontok nyomon követéséhez.\n"
+          },
         "map_packs": {
           "title": "Map Packs",
           "description": "Learn about official and community-made map packs for Kill Team games!"
-        },
-        "unofficial_resources": {
-          "title": "Unofficial Resources",
-          "links": {
-            "kt3": "Kill Team 3 Stat Tracker",
-            "printables": "3D Printable Minis Link Collection",
-            "battlekit": "Kill Team Battlekit"
-          }
         },
         "events": {
           "title": "Events and Local News",
@@ -92,8 +74,12 @@
       }
     }
   },
-  "impress": {
-    "about": "-",
+  "about": {
+    "title": "rólunk",
     "disclaimer": "Jogi nyilatkozat: A Sector Hungaricus egy független, önszerveződő társasjáték közösség. Nem állunk kapcsolatban semmilyen hivatalos kereskedelmi szervezettel vagy klubbal, és semmilyen módon nem használjuk vagy értékesítjük a Games Workshop vagy más harmadik fél tulajdonában lévő szellemi termékeket (IP). A közösség célja, hogy a játékosok számára elérhetővé tegye a kedvenc játékaikhoz kapcsolódó információkat és eszközöket, beleértve hivatalos szabályokat, közösségi anyagokat és ajánlott forrásokat. A Sector Hungaricus közösségi finanszírozásból üzemel. A honlapon található merch store és közönség-finanszírozási platformból származó bevételeit kizárólag a honlap fenntartására, üzemeltetési költségeire, a közösség fejlesztésére és rendezvények szervezésére fordítjuk. Bizonyos boltok, alkotók és csoportok megjelenhetnek a honlapon, mint ajánlott források. Ezek nem jelentenek hivatalos vagy szerződéses kapcsolatot, kivéve, ha külön szponzorált tartalomként vannak megjelölve. Az ajánlott források megjelenítésével célunk az, hogy a közösség tagjainak értékes és megbízható információkat és lehetőségeket biztosítsunk."
+  },
+  "soon":{
+    "menu_soon": "Hamarosan...",
+    "content_soon": "Hamarosan ez a rész is tartalommal bővül. Köszönjük a türelmeteket!"
   }
 }

@@ -3,11 +3,12 @@ import { Box, Container, Typography } from "@mui/material";
 
 interface CategoryLayoutProps {
     bannerTitle: string;
+    bannerImg?: string,
     menuContent: ReactNode;
     children: ReactNode;
 }
 
-const CategoryLayout: React.FC<CategoryLayoutProps> = ({ bannerTitle, menuContent, children }) => {
+const CategoryLayout: React.FC<CategoryLayoutProps> = ({ bannerTitle, bannerImg, menuContent, children }) => {
     return (
         <Container maxWidth="lg" style={{ marginTop: "20px" }}>
             {/* Banner */}
@@ -15,7 +16,7 @@ const CategoryLayout: React.FC<CategoryLayoutProps> = ({ bannerTitle, menuConten
                 sx={{
                     width: "100%",
                     height: "200px",
-                    backgroundImage: `url('https://placehold.co/1200x200.png?text=${bannerTitle}')`,
+                    backgroundImage: bannerImg ? `url(${bannerImg})` : `url('https://placehold.co/1200x200.png?text=${bannerTitle}')`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     borderRadius: "5px",

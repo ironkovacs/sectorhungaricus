@@ -8,6 +8,7 @@ import kofiQR from "./../assets/qrcode.png"
 import kofiLogo from "./../assets/kofi_symbol.png"
 import BoucherieBlock from "../assets/fonts/Boucherie Block.otf"
 import BoucherieBlockBold from "../assets/fonts/Boucherie Block Bold.otf"
+import killTeamBanner from "../assets/img/kill-team-banner-test.jpg"
 
 const assets = {
     kofi:{
@@ -16,6 +17,7 @@ const assets = {
     logo,
     images: {
         killTeam: killTeamImage,
+        killTeamBanner,
         warcry: warCryImage,
         trenchCrusade: trenchCrusadeImage,
         spearhead: spearheadImage,

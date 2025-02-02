@@ -3,8 +3,8 @@
 import React from "react";
 import { Box, Typography, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import KofiWidget from "./KofiWidget.tsx";
-import DiscordInviteButton from "./DiscordInviteButton.tsx";
+import KofiWidget from "../components/KofiWidget.tsx";
+import DiscordInviteButton from "../components/DiscordInviteButton.tsx";
 
 
 const Footer: React.FC = () => {

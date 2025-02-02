@@ -1,5 +1,12 @@
 import { sequelize, testConnection } from './sequelize';
+import https from 'https';
+import fs from 'fs';
 import app from './app';
+
+const sslOptions = {
+    key: fs.readFileSync('path/to/your/private.key'), // Replace with your private key path
+    cert: fs.readFileSync('path/to/your/certificate.crt'), // Replace with your certificate path
+};
 
 const PORT = process.env.PORT || 26117;
 
@@ -16,6 +23,6 @@ const PORT = process.env.PORT || 26117;
 
     // Start the server
     app.listen(PORT, () => {
-        console.log(`Server is running at http://localhost:${PORT}`);
+        console.log(`Server is running at http://s1.hostingplace.hu:${PORT}`);
     });
 })();

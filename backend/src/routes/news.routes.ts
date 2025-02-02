@@ -1,10 +1,10 @@
 import Router from '@koa/router';
 import { fetchNews, createNews } from '../controllers/news.controller';
 
-const router = new Router();
+const newsRouter = new Router();
 
 // Define routes
-router.get('/news', fetchNews);
-router.post('/news', createNews);
+newsRouter.get('/news', fetchNews);
+newsRouter.post('/news', createNews);
 
-export default router;
+export default newsRouter;

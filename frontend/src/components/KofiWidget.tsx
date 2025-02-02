@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, Popover, Typography } from "@mui/material";
+import {Box, Button, Link, Popover, Typography} from "@mui/material";
 import assets from "../services/assetsLoader";
 
 const KofiWidget: React.FC = () => {
@@ -93,7 +93,9 @@ const KofiWidget: React.FC = () => {
                     {/* QR Code Section */}
                     <Box textAlign="center" mt={2}>
                         <Typography variant="body2" color="textSecondary" gutterBottom>
-                            Or scan this QR code to support us:
+                            <Link href="https://ko-fi.com/sectorhungaricus">
+                                https://ko-fi.com/sectorhungaricus
+                            </Link>
                         </Typography>
                         <img
                             src={assets.kofi.kofiQR}

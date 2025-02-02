@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography, CardMedia, Button } from "@mui/material";
+import { Card, CardContent, Typography, CardMedia } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export interface CategoryCardProps {

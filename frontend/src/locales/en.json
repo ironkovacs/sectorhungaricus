@@ -7,44 +7,30 @@
   },
   "pages": {
     "merch": {
-      "title": "Merch",
-      "categories": {
-        "cat1": "cat1",
-        "cat2": "cat2"
-      }
+      "title": "Merch"
     },
     "calendar": {
       "title": "Calendar"
     },
     "landing_page": {
-    "welcome1": "Welcome to the Sector Hungaricus website!",
-    "welcome2": "Our community is Hungary’s largest self-organized, store- and club-independent wargame skirmish group. You can find more information about the games we play below. By browsing our event calendar, you can discover beginner-friendly events, club days, and tournament dates. Join our Discord servers to chat with the community about games and hobby-related topics!",
+      "welcome1": "Welcome to the Sector Hungaricus website!",
+      "welcome2": "Our community is Hungary’s largest self-organized, store- and club-independent wargame skirmish group. You can find more information about the games we play below. By browsing our event calendar, you can discover beginner-friendly events, club days, and tournament dates. Join our Discord servers to chat with the community about games and hobby-related topics!",
       "categories": {
         "40k": {
           "killteam": {
-            "title": "Warhammer 40K - Kill Team",
+            "title": "Kill Team",
             "description": "Action-packed tactical skirmish combat in the war-torn 41st Millennium"
           }
         },
         "aos": {
           "spearhead": {
-            "title": "Warhammer Age of Sigmar - Spearhead",
+            "title": "Spearhead",
             "description": "Play fast, fun games of Warhammer Age of Sigmar using the Spearhead game type – with just one box of miniatures per player!"
           },
           "warcry": {
-            "title": "Warhammer Age of Sigmar - Warcry",
+            "title": "Warcry",
             "description": "Fast-paced Skirmish Battles in the Mortal Realms"
           }
-        },
-        "other": {
-          "trench_crusade": {
-            "title": "Trench Crusade",
-            "description": "Trench Crusade is a skirmish-scale tabletop miniatures game that will plunge players deep into a horrifying alternate timeline."
-          }
-        },
-        "pc_games": {
-          "title": "PC Games",
-          "description": "Join our community and play together with us"
         }
       }
     },
@@ -54,34 +40,32 @@
           "title": "Kill Team"
         },
         "menu": {
-          "intro": "What is Kill Team",
-          "official_resources": "Official Resources",
+          "intro": "What is Kill Team?",
+          "rules": "Core Rules (extert)",
+          "game_sequence": "Game Sequence",
           "map_packs": "Map Packs",
-          "unofficial_resources": "Unofficial Resources",
+          "resources": "Resources",
           "events": "Events and Local News"
         },
         "intro": {
           "title": "What is Kill Team?",
-          "description": "Kill Team is a fast-paced, skirmish-based tabletop game set in the Warhammer 40,000 universe. Small squads of specialist fighters engage in tactical battles with evolving missions and dynamic rules. Perfect for newcomers to wargaming or veterans looking for quick matchups."
+          "description": "**Warhammer Kill Team** is a **skirmish wargame** that allows players to control small, specialized squads. The game is set in the **Warhammer 40,000** universe and focuses on the tactical management of individual units rather than large-scale battles. It uses an **alternating activation** system, meaning players take turns performing actions, constantly reacting to their opponent's moves.\n\n---\n\n# General Overview\n\n## **Complexity**\n- Kill Team is a **deep and complex strategy game** that requires tactical planning, positioning, and dice rolling.\n- The mechanics are intricate but easy to grasp if you're familiar with the basics of Warhammer 40,000.\n\n## **Game Duration**\n- A typical game lasts **1-2 hours**, depending on how well you know the rules and your team.\n\n## **Your Kill Team**\n- Your squad consists of **6-14 miniatures**, selected from **fixed faction rosters**.\n- Almost every **Warhammer 40,000 faction** is available in Kill Team, with some exceptions (*Custodes, Tyranid Hive Fleet, Grey Knights, Deathwatch, Chaos Daemons*).\n- Your team generally consists of:\n  - **1 Leader**: The most valuable and powerful model in your squad.\n  - **Specialists**: Models with unique abilities that provide tactical advantages.\n  - **Warriors**: Standard operatives that fill the remaining slots in your squad.\n- **6-model teams** usually consist of elite units (e.g., **Space Marines, Chaos Legions**), while **10-14 model teams** are more horde-based (e.g., **Orks, Imperial Guard**).\n\n---\n\n# Objective of the Game\n\nThe goal of the game is to score more **Victory Points (VP)** than your opponent over the course of **four rounds**. You can earn points through three main sources:\n\n### 1. **Crit Op (Primary Objective)**\n   - **Crit Op** points are earned by capturing, activating, and holding **objective markers**.\n   - Both players score from the same objectives, making strategic positioning and timing crucial.\n\n### 2. **Kill Op (Eliminating Enemy Operatives)**\n   - Earn points by eliminating enemy operatives.\n   - This encourages an aggressive playstyle, though it may not always be the most effective strategy.\n\n### 3. **Tac Op (Tactical Objectives)**\n   - **Tac Op** points are earned by completing secret objectives based on your team’s **archetype**.\n   - Archetypes include **Infiltration, Recon, Security, Seek & Destroy**.\n   - These objectives typically involve tactical challenges such as infiltrating enemy territory, gathering intelligence, or securing specific locations.\n\n---\n\n# What You Need to Play\n\n## **Essential Equipment**\n- **1 team** of miniatures (6-14 models).\n- **Set of six-sided dice (D6)**.\n- **Markers and tokens** (for tracking wounds, conditions, etc.).\n- **Measuring tools** (inch-based rulers or tape measures).\n- **Optional but useful items**:\n  - Laser pointer.\n  - Notebook or digital tool for tracking game progress.\n  - Rulebook, team data cards, mission and equipment cards.\n\n## **Game Board**\n- **Board size**: **22x30 inches** (approx. 56x76 cm).\n- **Terrain**: Kill Team uses much more terrain than larger-scale wargames. Recommended setup includes:\n  - **2-4 large buildings or ruins**.\n  - **2-4 smaller terrain pieces** (e.g., crumbling walls, pipes, containers).\n  - **Scattered minor elements** (e.g., barricades, barrels, crates)."
         },
-        "official_resources": {
-          "title": "Official Resources",
-          "description": "Explore the official resources for Kill Team:",
-
-            "website": "Kill Team Official Website",
-            "news": "Kill Team News Page",
-            "downloads": "Official Downloads (Rules, Errata)"
-
+        "rules": {
+          "title": "",
+          "description": ""
+        },
+        "game_sequence": {
+          "title": "Game Sequence",
+          "description": "\n### **1. Set up the Battle**\n\n-   Each player selects a **Kill Team**.\n-   Determine the **killzone** and set up terrain features. Ensure terrain types are specified.\n-   Set up **objective markers**, which, except in **Killzone: Bheta-Decima**, must be placed on the killzone floor.\n-   **Roll-off** – the winner decides who has initiative.\n\n### **2. Select Operatives**\n\n-   Each player secretly selects their **operatives**, adhering to the selection requirements in their kill team’s rules.\n-   Each player secretly selects up to **four equipment options** (each option can only be selected once per player). Selections are then revealed simultaneously.\n-   Each player gains **2 Command Points (CP)**.\n-   Each player secretly selects a **tac op** from one of their kill team’s archetypes (**Infiltration, Recon, Security, Seek & Destroy**).\n\n### **3. Set Up Operatives**\n\n-   Players take turns setting up **pre-battle equipment** (e.g., ladders), starting with the player with initiative. _(This is done item by item, not option by option.)_\n-   Players take turns setting up **one-third of their kill team** (rounding up), starting with the player with initiative.\n-   Operatives must be placed **wholly within their drop zone** and assigned a **Conceal order**.\n\n### **4. Scouting**\n\nThe **Scouting** phase not only provides pre-game advantages but also determines who has **initiative** in the first turning point using a **rock-paper-scissors** mechanic.\n\n#### **Scouting Options**\n\n1\uFE0F⃣ **Equip**\n\n-   Select one additional **equipment option** (it cannot be one you’ve already chosen).\n-   **Beats**: **Ploy**\n\n2\uFE0F⃣ **Ploy**\n\n-   In the first **Strategy phase**, you may use a **Strategy Ploy** for **0 CP**.\n-   **Beats**: **Reposition**\n\n3\uFE0F⃣ **Reposition**\n\n-   Perform a **free Reposition action** with one friendly operative wholly within your **drop zone** (it must remain within **3”** of the drop zone).\n-   **Beats**: **Equip**\n\n#### **Rock-Paper-Scissors Mechanic**\n\n-   **Equip** beats **Ploy**\n-   **Ploy** beats **Reposition**\n-   **Reposition** beats **Equip**\n-   **If tied**: The player who **did not** have initiative during setup decides.\n\n### **5. Play the Battle**\n\n-   The battle consists of **4 Turning Points**.\n-   Players alternate activating their operatives to perform actions.\n-   At the start of the first **Turning Point**, each player secretly selects their **primary op** (**Crit Op, Kill Op, or Tac Op**), which will grant additional victory points (**VP**) at the end of the battle.\n\n### **6. End the Battle**\n\n-   The battle ends after the **4th Turning Point**.\n-   If one player has no **operatives in the killzone**, the opponent continues playing out each remaining turn until the battle ends.\n-   Players reveal their **primary op** and score additional **VP** (equal to half of what they earned from it, rounding up).\n-   The player with the most **VP** wins. In case of a tie, the battle is a **draw**"
+        },
+        "resources": {
+          "title": "Resources",
+          "description": "# Official Sources\n\n## News and Information\n\n### [Warhammer Community - Kill Team](https://www.warhammer-community.com/en-gb/setting/kill-team/)\nThe latest news, announcements, and updates about the world of Kill Team.\n\n## Downloads and Rules Updates\n\n### [Warhammer Community - Downloads (Kill Team)](https://www.warhammer-community.com/en-gb/downloads/kill-team/)\nOfficial downloads, rule updates, and FAQs for Kill Team.\n\n## Official Mobile Application\n\n- **iOS:**  \n  [Kill Team: The App](https://apps.apple.com/us/app/kill-team-the-app/id6479447973)  \n  The official Kill Team app for iOS.\n\n- **Android:**  \n  [Kill Team: The App](https://play.google.com/store/apps/details?id=com.gamesworkshop.kt3&gl=UK)  \n  The official Kill Team app for Android.\n\n# Unofficial Sources\n\n## KT3 Battlekit\n\n### KT3 Battlekit\nA web application created by **Alberto Cortes Villena**, a prominent member of the Kill Team community. It includes rules, team descriptions, and a scoring tool. [KT3 Battlekit](https://kt3.albecortes.com/) \n\nThis tool is excellent for planning games, quickly referencing rules, and tracking points.\n"
         },
         "map_packs": {
           "title": "Map Packs",
           "description": "Learn about official and community-made map packs for Kill Team games!"
-        },
-        "unofficial_resources": {
-          "title": "Unofficial Resources",
-            "printables": "3D Printable Minis Link Collection",
-            "battlekit": "Kill Team Battlekit"
-
         },
         "events": {
           "title": "Events and Local News",
@@ -90,8 +74,12 @@
       }
     }
   },
-  "impress": {
-    "about": "-",
+  "about": {
+    "title": "about us",
     "disclaimer": "Disclaimer: Sector Hungaricus is an independent, self-organized wargaming community. We are not affiliated with any official commercial organization or club, and we do not use or sell intellectual properties (IP) owned by Games Workshop or any other third party in any form. Our goal is to provide players with access to information and tools related to their favorite games, including official rules, community-created content, and recommended resources.Sector Hungaricus operates through community funding. Revenue from the merch store and crowdfunding platforms is used exclusively for maintaining the website, covering operational costs, community development, and organizing events.Certain stores, creators, and groups may appear on the website as recommended resources. These appearances do not indicate official or contractual partnerships unless explicitly marked as sponsored content. By featuring these resources, our goal is to provide valuable and reliable information and opportunities for the community."
+  },
+  "soon":{
+    "menu_soon": "Soon...",
+    "content_soon": "This section will be updated with content soon. Thank you for your patience!"
   }
 }

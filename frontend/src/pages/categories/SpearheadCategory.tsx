@@ -1,42 +1,30 @@
 import React, { useState } from "react";
-import CategoryLayout from "../../components/layouts/CategoryLayout";
+import CategoryLayout from "../../layouts/CategoryLayout";
 import SideMenu, { MenuConfigItem } from "../../components/SideMenu";
+import {Typography} from "@mui/material";
+import {useTranslation} from "react-i18next";
 
 enum Sections {
-    INTRO = "INTRO",
-    RESOURCES = "RESOURCES",
-    NEWS = "NEWS",
+    INTRO = "INTRO"
 }
 
 const menuConfig: Record<string, MenuConfigItem> = {
     intro: {
         type: "internal",
         target: Sections.INTRO,
-        translationKey: "pages.categories.spearhead.menu.intro",
+        translationKey: "soon.menu_soon",
     },
-    resources: {
-        type: "internal",
-        target: Sections.RESOURCES,
-        translationKey: "pages.categories.spearhead.menu.resources",
-    },
-    news: {
-        type: "internal",
-        target: Sections.NEWS,
-        translationKey: "pages.categories.spearhead.menu.news",
-    },
+
 };
 
 const SpearheadCategory: React.FC = () => {
+    const { t } = useTranslation();
     const [activeSection, setActiveSection] = useState<Sections>(Sections.INTRO);
 
     const renderMainContent = () => {
         switch (activeSection) {
             case Sections.INTRO:
-                return <div>Spearhead Intro Content</div>;
-            case Sections.RESOURCES:
-                return <div>Spearhead Resources Content</div>;
-            case Sections.NEWS:
-                return <div>Spearhead News Content</div>;
+                return (<Typography>{t("soon.content_soon")}</Typography>);
             default:
                 return null;
         }

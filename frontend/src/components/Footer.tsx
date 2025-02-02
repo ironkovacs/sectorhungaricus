@@ -28,12 +28,12 @@ const Footer: React.FC = () => {
             {/* Right Section: Disclaimer Link */}
             <Box>
                 <Link
-                    href="/impress-disclaimer"
+                    href="/about"
                     underline="hover"
                     color="primary"
                 >
                     <Typography variant="body1">
-                        {t("header.title")} – Impress & Disclaimer
+                        {t("header.title")} - {t("about.title")}
                     </Typography>
                 </Link>
             </Box>

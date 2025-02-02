@@ -5,7 +5,7 @@ import { FaDiscord } from "react-icons/fa";
 const DiscordInviteButton: React.FC = () => {
     return (
         <Button
-            href="https://discord.gg/f9vRVWQn"
+            href="https://discord.gg/8zpBemRQ"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
@@ -20,8 +20,8 @@ const DiscordInviteButton: React.FC = () => {
                 "&:hover": {
                     backgroundColor: "#4752c4",
                 },
-                width: "160px", // Match Ko-fi button width
-                height: "48px", // Match Ko-fi button height
+                width: "160px",
+                height: "48px",
             }}
             startIcon={<FaDiscord size={24} />}
         >

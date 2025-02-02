@@ -10,11 +10,13 @@ import {
     Tabs,
     Menu,
 } from "@mui/material";
+import { Brightness4, Brightness7 } from "@mui/icons-material";
 import { Link, useLocation } from "react-router-dom";
 import TranslateIcon from "@mui/icons-material/Translate";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "../contexts/LanguageContext";
 import { Logo, Title } from "./styled/HeaderStyled";
+import { useThemeContext } from "../contexts/ThemeContext";
 
 import assets from "../services/assetsLoader";
 import routesConfig from "../routesConfig"; // Import routesConfig to dynamically render tabs
@@ -41,6 +43,7 @@ const Header: React.FC = () => {
         setLanguage(lang); // Update context
         setAnchorEl(null); // Close the language menu
     };
+    const { toggleTheme, mode } = useThemeContext();
 
     const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
         setActiveTab(newValue);
@@ -97,6 +100,10 @@ const Header: React.FC = () => {
                         <MenuItem onClick={() => handleLanguageChange("en")}>{t("header.english")}</MenuItem>
                         <MenuItem onClick={() => handleLanguageChange("hu")}>{t("header.hungarian")}</MenuItem>
                     </Menu>
+                    {/* Light/Dark Mode Toggle Button */}
+                    <IconButton color="inherit" onClick={toggleTheme}>
+                        {mode === "light" ? <Brightness4 /> : <Brightness7 />}
+                    </IconButton>
                 </Box>
             </Toolbar>
 

@@ -11,26 +11,14 @@ const ImpressDisclaimer: React.FC = () => {
         <Box p={4}>
             {/* Page Title */}
             <Typography variant="h4" gutterBottom>
-                {t("header.title")} – Impress & Disclaimer
+                {t("header.title")}
             </Typography>
 
-            {/* Impress Section */}
-            <Box mt={4}>
-                <Typography variant="h5" gutterBottom>
-                    Impress
-                </Typography>
-                <Typography variant="body1" paragraph>
-                    {t("impress.about")}
-                </Typography>
-            </Box>
 
             {/* Disclaimer Section */}
             <Box mt={4}>
-                <Typography variant="h5" gutterBottom>
-                    Disclaimer
-                </Typography>
                 <Typography variant="body1" paragraph>
-                    {t("impress.disclaimer")}
+                    {t("about.disclaimer")}
                 </Typography>
             </Box>
         </Box>
