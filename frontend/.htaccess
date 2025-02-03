@@ -1,6 +1,12 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
+  RewriteCond %{REQUEST_URI} ^/api/
+  RewriteRule ^(.*)$ https://api.sectorhungaricus.hu/$1 [P,L]
+
+  # Regular SPA setup for serving index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
 
   # Route SPA requests to index.html
   RewriteCond %{REQUEST_FILENAME} !-f

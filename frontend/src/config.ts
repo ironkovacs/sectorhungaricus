@@ -1,3 +1,3 @@
-const BACKEND_SERVER = "https://s1.hostingplace.hu:26117";
+const BACKEND_SERVER = "https://api.sectorhungaricus.hu";
 
 export default BACKEND_SERVER;

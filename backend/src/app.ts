@@ -9,27 +9,23 @@ const app = new Koa();
 
 const allowedOrigins = [
     "http://localhost:3000", // Local development frontend
-    "https://sectorhungaricus.hu", // Production website frontend
-    "http://localhost:5173/"
+    "http://localhost:5173/",
+    "https://sectorhungaricus.hu",
+    "https://api.sectorhungaricus.hu", // Production website frontend
 ];
 
 
 
 // Middleware
 app.use(koaBody());
-app.use(cors({
-    origin: (ctx: Koa.Context) => {
-        console.log({REQUEST_ORIGIN: ctx.origin})
-        const requestOrigin = ctx.request.headers.origin ?? '';
-        if (allowedOrigins.includes(requestOrigin)) {
-            return requestOrigin; // Allow this origin
-        }
-        return ''; // Block other origins by returning an empty string
-    },
-    credentials: true, // Allow cookies or Authorization headers
-    allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowed methods
-    allowHeaders: ["Content-Type", "Authorization", "Accept"], // Allowed headers
-}));
+app.use(
+    cors({
+        origin: "https://www.sectorhungaricus.hu", // Frontend domain
+        credentials: true, // Allow cookies and basic authentication
+        allowMethods: ["GET", "POST", "PUT", "DELETE"], // Allow these HTTP methods
+        allowHeaders: ["Content-Type", "Authorization"], // Allow these headers in requests
+    })
+);
 
 // Register routes
 app.use(newsRoutes.routes());
