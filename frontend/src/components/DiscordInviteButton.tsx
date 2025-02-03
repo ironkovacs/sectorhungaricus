@@ -5,7 +5,7 @@ import { FaDiscord } from "react-icons/fa";
 const DiscordInviteButton: React.FC = () => {
     return (
         <Button
-            href="https://discord.gg/8zpBemRQ"
+            href="https://discord.gg/EKhCV7up"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
