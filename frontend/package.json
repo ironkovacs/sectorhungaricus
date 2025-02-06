@@ -6,14 +6,15 @@
   "proxy": "http://localhost:26117",
   "scripts": {
     "copyPhpConfig": "node ./scripts/copy-php-config.js",
-    "build-frontend": "tsc -b && vite build && npm run copyPhpConfig",
+    "build-frontend": "tsc -b && cross-env VITE_BACKEND_URL=https://be.sectorhungaricus.hu BACKEND_URL=https://be.sectorhungaricus.hu vite build && npm run copyPhpConfig",
     "dev": "vite",
-    "lint": "eslint .",
+    "dev-remote": "cross-env VITE_BACKEND_URL=https://be.sectorhungaricus.hu BACKEND_URL=https://be.sectorhungaricus.hu vite",    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@mdxeditor/editor": "^3.21.2",
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
     "@tanstack/react-query": "^5.64.1",
@@ -38,6 +39,7 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "cross-env": "^7.0.3",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",

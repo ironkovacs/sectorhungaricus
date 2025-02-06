@@ -26,7 +26,8 @@ const menuConfig: Record<string, MenuConfigItem> = {
         type: "internal",
         target: Sections.INTRO,
         translationKey: "pages.categories.killteam.menu.intro",
-    }, resources: {
+    },
+    resources: {
         type: "internal",
         target: Sections.RESOURCES, // New Section for Resources
         translationKey: "pages.categories.killteam.menu.resources",
@@ -48,22 +49,6 @@ const menuConfig: Record<string, MenuConfigItem> = {
         translationKey: "pages.categories.killteam.menu.map_packs",
     },
 
-    /*events: {
-        type: "nested",
-        translationKey: "pages.categories.killteam.menu.events",
-        nestedMenu: {
-            localEvents: {
-                type: "internal",
-                target: Sections.LOCAL_EVENTS,
-                translationKey: "pages.categories.killteam.menu.local_events",
-            },
-            news: {
-                type: "internal",
-                target: Sections.LOCAL_NEWS,
-                translationKey: "pages.categories.killteam.menu.news",
-            },
-        },
-    },*/
 };
 const KillTeamCategory: React.FC = () => {
     const {t} = useTranslation();

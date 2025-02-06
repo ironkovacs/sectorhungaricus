@@ -1,3 +1,3 @@
-const BACKEND_SERVER = "https://be.sectorhungaricus.hu";
+const BACKEND_SERVER = import.meta.env.VITE_BACKEND_URL;
 
 export default BACKEND_SERVER;

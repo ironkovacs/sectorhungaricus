@@ -12,12 +12,25 @@ import routesConfig from "./routesConfig";
 import LandingPage from "./pages/LandingPage.tsx";
 import MerchPage from "./pages/MerchPage.tsx";
 import CalendarPage from "./pages/CalendarPage.tsx";
-import ProtectedRoute from "./components/ProtectedRoute.tsx";
-import HighlordsLayout from "./layouts/HighlordsLayout.tsx";
 import Login from "./pages/Login.tsx";
 import ImpressDisclaimerPage from "./pages/ImpressDisclaimerPage.tsx";
+import AdminPage from "./pages/AdminPage.tsx";
 
 const queryClient = new QueryClient();
+
+const isAdmin = () => {
+    const token = localStorage.getItem("token");
+    return !!token && JSON.parse(atob(token.split('.')[1])).isAdmin;
+};
+
+const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    if (!isAdmin()) {
+        return <Navigate to="/login" replace />;
+    }
+
+    return <>{children}</>;
+};
+
 
 const App: React.FC = () => {
     return (
@@ -35,27 +48,17 @@ const App: React.FC = () => {
                                 {routesConfig.map((category) => (
                                     <Route key={category.path} path={category.path}
                                            element={category.component && <category.component/>}>
-                                        {category.subRoutes?.map((sub) => (
-                                            <Route
-                                                key={sub.path}
-                                                path={sub.path}
-                                                element={sub.component ? <sub.component/> : null}
-                                            />
-                                        ))}
                                     </Route>
                                 ))}
                                 {/* Admin Page */}
                                 <Route path="/login" element={<Login/>}/>
-
-                                {/* Highlords Dashboard (Admins Only) */}
                                 <Route
-                                    path="/highlords"
+                                    path="/admin"
                                     element={
-                                        <ProtectedRoute routeUrl="/highlords">
-                                            <HighlordsLayout/>
+                                        <ProtectedRoute>
+                                            <AdminPage />
                                         </ProtectedRoute>
-                                    }
-                                />
+                                    }/>
 
                                 {/* Redirect any non-existent routes to login */}
                                 <Route path="/about" element={<ImpressDisclaimerPage/>}/>

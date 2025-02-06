@@ -1,5 +1,5 @@
 import { DataTypes, Model, Optional } from 'sequelize';
-import { sequelize } from '../sequelize';
+import { sequelize } from '../config/sequelize';
 
 // Define the attributes of the News model
 interface NewsAttributes {
@@ -61,7 +61,7 @@ News.init(
         },
     },
     {
-        sequelize, // Pass the Sequelize instance
+        sequelize: sequelize, // Pass the Sequelize instance
         tableName: 'news',
     }
 );

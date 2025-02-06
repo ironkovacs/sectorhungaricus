@@ -23,21 +23,20 @@ const routesConfig: RouteConfig[] = [
         bannerTitle: "Kill Team",
         component: KillTeamCategory,
 
-},
-{
-    name: "Spearhead",
+    },
+    {
+        name: "Spearhead",
         path: "/spearhead",
-    bannerTitle: "Spearhead",
-    component:SpearheadCategory,
+        bannerTitle: "Spearhead",
+        component: SpearheadCategory,
 
-},
-{
-    name: "Warcry",
+    },
+    {
+        name: "Warcry",
         path: "/warcry",
-    bannerTitle: "Warcry",
-    component:WarcryCategory
-
-},
+        bannerTitle: "Warcry",
+        component: WarcryCategory
+    }
 ];
 
 export default routesConfig;

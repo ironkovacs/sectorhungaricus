@@ -1,37 +1,48 @@
 import Koa from 'koa';
 import koaBody from 'koa-body';
-import cors from "@koa/cors";
+import session from 'koa-session';
+import RedisStore from 'koa-redis';
+
 import newsRoutes from './routes/news.routes';
-import adminRouter from "./routes/admin.routes";
-import userRoutes from "./routes/user.routes";
+import userRoutes from "./routes/highlords.routes";
+import helmet from "koa-helmet";
+
+import Redis from "ioredis";
+import rateLimitMiddleware from "./middlewares/rate-limit";
+import corsMiddleware from "./middlewares/cors";
+import optionsHandlerMiddleware from "./middlewares/options-handler";
 
 const app = new Koa();
+const redis = new Redis();
 
-const allowedOrigins = [
-    "http://localhost:3000", // Local development frontend
-    "http://localhost:5173/",
-    "https://sectorhungaricus.hu",
-    "https://api.sectorhungaricus.hu", // Production website frontend
-];
+app.keys = ['your-session-secret']; // Replace with a long, secure key
 
-
-
-// Middleware
-app.use(koaBody());
 app.use(
-    cors({
-        origin: "https://www.sectorhungaricus.hu", // Frontend domain
-        credentials: true, // Allow cookies and basic authentication
-        allowMethods: ["GET", "POST", "PUT", "DELETE"], // Allow these HTTP methods
-        allowHeaders: ["Content-Type", "Authorization"], // Allow these headers in requests
-    })
+    session(
+        {
+            store: new (RedisStore as any)({ client: redis }), // Use Redis as the session store
+            key: 'highlord:sess', // Prefix for session keys in Redis
+            maxAge: 24 * 60 * 60 * 1000, // Session validity: 1 day
+            httpOnly: true, // Prevent client JS from accessing cookies
+            rolling: true, // Refresh session expiry on each request
+            renew: true, // Renew session to extend its validity
+        },
+        app
+    )
 );
+
+// Middlewares
+app.use(koaBody());
+app.use(helmet());
+rateLimitMiddleware(app);
+corsMiddleware(app);
+optionsHandlerMiddleware(app);
 
 // Register routes
 app.use(newsRoutes.routes());
 app.use(newsRoutes.allowedMethods());
-app.use(adminRouter.routes())
-app.use(adminRouter.allowedMethods())
 app.use(userRoutes.routes())
 app.use(userRoutes.allowedMethods())
+
+console.log(userRoutes.stack.map(i => `${i.methods} ${i.path}`));
 export default app;

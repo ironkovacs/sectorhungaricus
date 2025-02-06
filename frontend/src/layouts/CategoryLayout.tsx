@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
-import { Box, Container, Typography } from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
+import SHTabs from "../components/TabsComponent.tsx";
 
 interface CategoryLayoutProps {
     bannerTitle: string;
@@ -8,8 +9,16 @@ interface CategoryLayoutProps {
     children: ReactNode;
 }
 
-const CategoryLayout: React.FC<CategoryLayoutProps> = ({ bannerTitle, bannerImg, menuContent, children }) => {
-    return (
+const CategoryLayout: React.FC<CategoryLayoutProps> = (
+    { bannerTitle, bannerImg, menuContent, children }) =>
+   (<Container sx={{
+       margin: 0,
+       padding: 0,
+       display: 'flex',
+       flexDirection: 'column',
+       width: '100vw',
+   }}>
+        <SHTabs/>
         <Container maxWidth="lg" style={{ marginTop: "20px" }}>
             {/* Banner */}
             <Box
@@ -55,7 +64,7 @@ const CategoryLayout: React.FC<CategoryLayoutProps> = ({ bannerTitle, bannerImg,
                 </Box>
             </Box>
         </Container>
-    );
-};
+    </Container>);
+
 
 export default CategoryLayout;
